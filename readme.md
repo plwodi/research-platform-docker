@@ -4,6 +4,10 @@ Execute docker with all the Qiskit dependencies installed, and mounting your cur
 
 ## use
 
+you can use it directly from Docker hub
+
+> docker run -v ${PWD}:/qiskit/your_computer -p 8888:8888 -ti ismaelfaro/qiskit_dev
+
 ## Create image
 
 > docker build -t qiskit .

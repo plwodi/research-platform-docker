@@ -4,7 +4,7 @@ RUN yum install -y gcc
 RUN yum install -y python3-devel
 RUN yum install -y python3-pip
 RUN yum install -y git
-RUN ln -s /usr/bin/python3 /usr/bin/python
+#RUN ln -s /usr/bin/python3 /usr/bin/python
 
 WORKDIR qiskit
 RUN pip install qiskit
