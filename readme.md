@@ -4,9 +4,13 @@ Execute docker with all the Qiskit dependencies installed, and mounting your cur
 
 ## use
 
+### with Jupyter Lab and tutorials
+
 you can use it directly from Docker hub
 
 > docker run -v ${PWD}:/qiskit/your_computer -p 8888:8888 -ti ismaelfaro/qiskit_dev
+
+### Vanilla Qiskit version
 
 ## Create image
 
@@ -30,3 +34,6 @@ you can use it directly from Docker hub
 you can play with Jupyter lab and Qiskit in your browser.
 > htt://127.0.0.1:8888/?token=[[[paste here the token from the terminal]]]
 
+
+# dependecies:
+- OS: Fedora
