@@ -4,6 +4,8 @@ Execute docker with all the Qiskit dependencies installed, and mounting your cur
 
 ## use
 
+you need to have installed docker in your machine, ex. ([Docker Desktop](https://www.docker.com/products/docker-desktop))
+
 ### with Jupyter Lab and tutorials
 
 you can use it directly from Docker hub
