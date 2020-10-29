@@ -1,14 +1,18 @@
-FROM fedora
+FROM centos
 
-RUN yum install -y gcc
-RUN yum install -y python3-devel
-RUN yum install -y python3-pip
-RUN yum install -y git
-# RUN ln -s /usr/bin/python3 /usr/bin/python
+RUN dnf install -y gcc
+RUN dnf install -y python3-devel
+RUN dnf install -y python3-pip
+RUN dnf install -y git
+# RUN dnf install -y gcc-gfortran 
+# RUN dnf install -y --enablerepo=PowerTools openblas-devel
+# RUN dnf install -y --enablerepo=PowerTools lapack-devel 
 
 WORKDIR qiskit
-RUN pip3 install qiskit
-RUN pip3 install pyscf
+RUN pip3 install --upgrade pip
+RUN pip3 install Cython conan  --user
+RUN pip3 install qiskit --user
+RUN pip3 install pyscf --user
 
 RUN echo -e "echo \"\n🔆 Welcome to the Qiskit Docker\"\n" >>~/.bashrc 
 RUN echo -e "echo \"\n🚀 This is the minimum elements to run Qiskit \n\n \"" >>~/.bashrc 
