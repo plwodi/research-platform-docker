@@ -1,8 +1,7 @@
-FROM ismaelfaro/qiskit
+FROM ismaelfaro/qiskit:0.23.0
 
-RUN git clone https://github.com/Qiskit/qiskit-tutorials.git
 RUN pip install jupyterlab  
-
+RUN git clone https://github.com/Qiskit/qiskit-tutorials.git
 
 RUN echo -e "jupyter lab --allow-root --no-browser --ip=0.0.0.0  &>/dev/null &" >>~/.bashrc
 RUN echo -e "echo \"\n😻🙀 Developer Enviroment\"\n" >>~/.bashrc 

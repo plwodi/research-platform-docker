@@ -4,13 +4,9 @@ RUN dnf install -y gcc
 RUN dnf install -y python3-devel
 RUN dnf install -y python3-pip
 RUN dnf install -y git
-# RUN dnf install -y gcc-gfortran 
-# RUN dnf install -y --enablerepo=PowerTools openblas-devel
-# RUN dnf install -y --enablerepo=PowerTools lapack-devel 
 
 WORKDIR qiskit
 RUN pip3 install --upgrade pip
-RUN pip3 install Cython conan  --user
 RUN pip3 install qiskit --user
 RUN pip3 install pyscf --user
 
