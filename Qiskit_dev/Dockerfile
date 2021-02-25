@@ -1,4 +1,4 @@
-FROM ismaelfaro/qiskit:0.23.0
+FROM ismaelfaro/qiskit:latest
 
 RUN pip install jupyterlab  
 RUN git clone https://github.com/Qiskit/qiskit-tutorials.git
