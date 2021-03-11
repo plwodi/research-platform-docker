@@ -10,21 +10,21 @@ you need to have installed docker in your machine, ex. ([Docker Desktop](https:/
 
 you can use it directly from Docker hub
 
-> docker run -v ${PWD}:/qiskit/your_computer -p 8888:8888 -ti ismaelfaro/qiskit_dev
+> docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti ismaelfaro/qiskit_dev
 
 ### Vanilla Qiskit version
 
 ## Create image
 
-> docker build -t qiskit .
+> docker build -t research-platform-container .
 
 ## execute mounting your current directory
 
-> docker run -v ${PWD}:/qiskit -ti qiskit
+> docker run -v ${PWD}:/computer -ti research-platform-container
 
 ### adding port to run jupyter lab
 
-> docker run -v ${PWD}:/qiskit/your_computer -p 8888:8888 -ti qiskit
+> docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti research-platform-container
 
 ## execute python and start
 
