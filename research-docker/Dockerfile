@@ -21,9 +21,9 @@ RUN pip install xgboost
 RUN pip install lightgbm
 RUN pip install scipy
 RUN pip install numpy
-#RUN pip install torch
-#RUN pip install torchvision
-#RUN pip install torchaudio
+RUN pip install torch
+RUN pip install torchvision
+RUN pip install torchaudio
 RUN pip install Keras
 RUN pip install snapml
 RUN pip install tensorflow
@@ -42,6 +42,9 @@ RUN pip install ibmpairs
 
 #install JupyterLabs
 RUN pip install -Iv jupyterlab==3.0.10
+
+RUN pip3 install elyra --use-deprecated=legacy-resolver
+RUN jupyter lab build
 
 #create directory to map local hard drive
 WORKDIR /computer

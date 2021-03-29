@@ -15,6 +15,8 @@ RUN apt install -y apt-transport-https
 RUN apt install -y lsb-release
 RUN apt install -y ca-certificates
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apt install -y flake8
+RUN apt install -y nodejs
 RUN apt install -y gcc
 RUN apt install -y python3-pip
 RUN apt install -y git

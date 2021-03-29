@@ -10,21 +10,21 @@ you need to have installed docker in your machine, ex. ([Docker Desktop](https:/
 
 you can use it directly from Docker hub
 
-> docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti plwodi/research-platform
+> docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti plwodi/research-docker
 
 ### Vanilla version
 
 ## Create image
 
-> docker build -t research-platform .
+> docker build -t research-docker .
 
 ## execute mounting your current directory
 
-> docker run -v ${PWD}:/computer/your_computer -ti research-platform
+> docker run -v ${PWD}:/computer/your_computer -ti research-docker
 
 ### adding port to run jupyter lab
 
-> docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti research-platform-container
+> docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti research-docker
 
 ### run Jupyter Lab
 
@@ -36,4 +36,4 @@ you may need to run the following command to get the Jupyter lab url
 
 
 # dependecies:
-- OS: Centos
+- OS: Ubuntu
