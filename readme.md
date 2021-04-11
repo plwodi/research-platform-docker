@@ -22,7 +22,7 @@ Run the `docker run` command for the desired container
 >TBD
 
 ### quantum container (qiskit)
->TBD
+>docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti plwodi/qiskit-docker:latest
 
 ### base container with nothing installed
 >docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti plwodi/base-docker:latest
@@ -33,14 +33,14 @@ Run the `docker run` command for the desired container
 >docker build -t base-docker:latest /base-docker/
 
 2. Build the desired container
->docker build -t <name>:latest /<name>/
+>docker build -t NAME:latest /NAME/
 
 3. Run the desired container
-> docker run -v ${PWD}:/computer/your_computer -ti <name>
+> docker run -v ${PWD}:/computer/your_computer -ti NAME
 
 ### adding port to run jupyter lab
 
-> docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti <name>
+> docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti NAME
 
 ## run jupyter lab
 
