@@ -33,7 +33,7 @@ Run the `docker run` command for the desired container
 >docker build -t base-docker:latest /base-docker/
 
 2. Build the desired container
->docker build -t NAME:latest /NAME/
+>docker build -t NAME /NAME/
 
 3. Run the desired container
 > docker run -v ${PWD}:/computer/your_computer -ti NAME
