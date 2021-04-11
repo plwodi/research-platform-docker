@@ -1,5 +1,5 @@
 #start from the latest base-docker release
-FROM plwodi/base-docker:version1.0
+FROM plwodi/base-docker:latest
 
 #install data visualisation components
 RUN pip install matplotlib
@@ -28,6 +28,8 @@ RUN pip install Keras
 RUN pip install snapml
 RUN pip install tensorflow
 RUN pip install tensorboard
+RUN pip install ipywidgets
+RUN pip install iprogress
 
 #install additional data science components
 RUN pip install sympy
@@ -41,6 +43,7 @@ RUN pip3 install pyscf
 RUN pip install ibmpairs
 
 #install JupyterLabs
+RUN pip install jupyterlab_widgets
 RUN pip install -Iv jupyterlab==3.0.10
 
 RUN pip3 install elyra --use-deprecated=legacy-resolver
@@ -58,13 +61,22 @@ RUN git clone https://github.com/Qiskit/qiskit-tutorials.git /computer/qiskit
 RUN git clone https://github.com/IBM/ibmpairs.git /computer/ibm_pairs
 
 #welcome messages and instructions for the user
-RUN echo "echo -e \"\n🔆 Welcome to the artificial intelligence docker container\"\n" >>~/.bashrc
-RUN echo "echo -e \"\n🚀 This is a suggested minimum set of components needed to get started with artificial intelligence\n\n \"" >>~/.bashrc
-RUN echo "echo -e \"\nThe following components have been installed in this container:\"\n" >>~/.bashrc
-RUN echo "echo -e \"\nnumpy, scipy, matplotlib, ipython, pandas, sympy, nose, torch, torchaudio, torchvision, tensorflow\"\n" >>~/.bashrc
-RUN echo "echo -e \"\n\nStarting Jupyter Lab...\"\n" >>~/.bashrc
+RUN echo "echo -e \"\n🔆 Welcome to the data science, ai/ml, quantum and weather docker container\"\n" >>~/.bashrc
+RUN echo "echo -e \"\n🚀 This is a suggested minimum set of components needed to get started with data science, ai/ml, quantum and weather\n\"" >>~/.bashrc
+
+RUN echo "echo -e \"The following components have been installed in this container:\n\"" >>~/.bashrc
+
+RUN echo "echo -e \"matplotlib, seaborn, plotly, pydot, rasterio, imageio, opencv-python, SQLAlchemy, pandas, h5py\"\n" >>~/.bashrc
+RUN echo "echo -e \"scikit-learn, xgboost, lightgbm, scipy, numpy, torch, torchvision, torchaudio, Keras\"\n" >>~/.bashrc
+RUN echo "echo -e \"snapml, tensorflow, tensorboard, ipywidgets, iprogress, elyra, sympy, lale\"\n" >>~/.bashrc
+RUN echo "echo -e \"qiskit, pyscf, ibmpairs\"\n" >>~/.bashrc
+
+RUN echo "echo -e \"\nStarting Jupyter Lab...\"\n" >>~/.bashrc
 RUN echo "jupyter lab --allow-root --no-browser --ip=0.0.0.0  &>/dev/null &" >>~/.bashrc
-RUN echo "sleep 2" >>~/.bashrc
+RUN echo "sleep 3" >>~/.bashrc
 RUN echo "echo -e \"\n📺 You can open Jupyter Lab using the next URL:\n\"" >>~/.bashrc
 RUN echo "jupyter server list | egrep -o 'http://[^ ]+'" >>~/.bashrc
-RUN echo "echo -e \"\n\n\"" >>~/.bashrc
+
+RUN echo "echo -e \"\nIf no URL appear above run the following command from within the container:\n\"" >>~/.bashrc
+RUN echo "echo -e \"jupyter server list | egrep -o 'http://[^ ]+'\"" >>~/.bashrc
+RUN echo "echo -e \"\n\"" >>~/.bashrc

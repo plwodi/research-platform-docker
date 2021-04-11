@@ -1,39 +1,54 @@
-# Research platform docker
+# Research platform docker container
 
-Execute docker with some of the common data science and AI/ML dependencies installed, and mounting your current folder/directory inside /computer/ folder in docker.
+The purpose of this container is to provide a basic platform on which data science, artificial intelligence, machine learning and quantum research and activities can take place.
+
+Execute a docker container with some of the common data science, AI/ML, and quantum dependencies installed, and mounting your current working folder/directory to the /computer/your_computer folder within the docker container.
+
+## pre-requisites
+
+You need to have installed docker on your machine, ex. ([Docker Desktop](https://www.docker.com/products/docker-desktop))
 
 ## use
 
-you need to have installed docker in your machine, ex. ([Docker Desktop](https://www.docker.com/products/docker-desktop))
+Run the `docker run` command for the desired container
 
-### with Jupyter Lab and tutorials
+### complete container
+>docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti plwodi/research-docker:latest
 
-you can use it directly from Docker hub
+### data science container
+>TBD
 
-> docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti plwodi/research-docker
+### ai/ml container
+>TBD
 
-### Vanilla version
+### quantum container (qiskit)
+>TBD
 
-## Create image
+### base container with nothing installed
+>docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti plwodi/base-docker:latest
 
-> docker build -t research-docker .
+## build your own
 
-## execute mounting your current directory
+1. Build the base container
+>docker build -t base-docker:latest /base-docker/
 
-> docker run -v ${PWD}:/computer/your_computer -ti research-docker
+2. Build the desired container
+>docker build -t <name>:latest /<name>/
+
+3. Run the desired container
+> docker run -v ${PWD}:/computer/your_computer -ti <name>
 
 ### adding port to run jupyter lab
 
-> docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti research-docker
+> docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti <name>
 
-### run Jupyter Lab
+## run jupyter lab
 
-you can play with Jupyter lab in your browser.
-> htt://0.0.0.0:8888/?token=[[[paste here the token from the terminal]]]
+You can play with Jupyter lab in your browser.
+>http://0.0.0.0:8888/?token=[[[paste here the token from the terminal]]]
 
-you may need to run the following command to get the Jupyter lab url
+Sometimes when starting the container the Jupyter Lab URL will not appear.  Running the `jupyter server` command will get you the URL
 >jupyter server list
-
 
 # dependecies:
 - OS: Ubuntu

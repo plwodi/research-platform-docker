@@ -1,0 +1,3 @@
+#ignore the test folder
+/test-docker
+/qiskit-docker
