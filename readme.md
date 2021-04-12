@@ -16,10 +16,10 @@ Run the `docker run` command for the desired container
 >docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti plwodi/research-docker:latest
 
 ### data science container
->TBD
+>docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti plwodi/ds-docker:latest
 
 ### ai/ml container
->TBD
+>coming soon
 
 ### quantum container (qiskit)
 >docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti plwodi/qiskit-docker:latest
@@ -30,13 +30,16 @@ Run the `docker run` command for the desired container
 ## build your own
 
 1. Build the base container
->docker build -t base-docker:latest /base-docker/
+>git clone https://github.com/plwodi/research-platform-docker
+>cd research-platform-docker/base-docker
+>docker build -t base-docker .
 
-2. Build the desired container
->docker build -t NAME /NAME/
+2. Build the complete container
+>cd research-platform-docker/research-docker
+>docker build -t research-docker .
 
-3. Run the desired container
-> docker run -v ${PWD}:/computer/your_computer -ti NAME
+3. Run the complete container
+> docker run -v ${PWD}:/computer/your_computer -ti research-docker
 
 ### adding port to run jupyter lab
 
@@ -49,6 +52,12 @@ You can play with Jupyter lab in your browser.
 
 Sometimes when starting the container the Jupyter Lab URL will not appear.  Running the `jupyter server` command will get you the URL
 >jupyter server list
+
+# what's included
+
+The following packages are included in the research-docker container.  All other containers have a subset from this list.
+
+matplotlib, seaborn, plotly, pydot, rasterio, imageio, opencv-python, SQLAlchemy, pandas, h5py, scikit-learn, xgboost, lightgbm, scipy, numpy, torch, torchvision, torchaudio, keras, snapml, tensorflow, tensorboard, ipywidgets, iprogress, elyra, sympy, lale, qiskit, pyscf, qiskit-machine-learning, ibmpairs
 
 # dependecies:
 - OS: Ubuntu

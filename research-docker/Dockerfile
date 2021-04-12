@@ -2,42 +2,19 @@
 FROM plwodi/base-docker:latest
 
 #install data visualisation components
-RUN pip install matplotlib
-RUN pip install seaborn
-RUN pip install plotly==4.14.3
-RUN pip install pydot
-RUN pip install rasterio
+RUN pip install matplotlib seaborn plotly==4.14.3 pydot rasterio
 
 #install data manipulation components
-RUN pip install imageio
-RUN pip install opencv-python
-RUN pip install SQLAlchemy
-RUN pip install pandas
-RUN pip install h5py
+RUN pip install imageio opencv-python SQLAlchemy pandas h5py
 
 #install machine learning components
-RUN pip install scikit-learn
-RUN pip install xgboost
-RUN pip install lightgbm
-RUN pip install scipy
-RUN pip install numpy
-RUN pip install torch
-RUN pip install torchvision
-RUN pip install torchaudio
-RUN pip install Keras
-RUN pip install snapml
-RUN pip install tensorflow
-RUN pip install tensorboard
-RUN pip install ipywidgets
-RUN pip install iprogress
+RUN pip install scikit-learn xgboost lightgbm scipy numpy torch torchvision torchaudio Keras snapml tensorflow tensorboard ipywidgets iprogress
 
 #install additional data science components
-RUN pip install sympy
-RUN pip install lale
+RUN pip install sympy lale
 
 #install base Qiskit components
-RUN pip3 install qiskit
-RUN pip3 install pyscf
+RUN pip3 install qiskit pyscf qiskit-machine-learning
 
 #install base IBM PAIRS component(s)
 RUN pip install ibmpairs
@@ -58,6 +35,7 @@ RUN git clone https://github.com/Trusted-AI/AIF360.git /computer/aif360
 RUN git clone https://github.com/Trusted-AI/AIX360.git /computer/aix360
 RUN git clone https://github.com/Trusted-AI/adversarial-robustness-toolbox.git /computer/art
 RUN git clone https://github.com/Qiskit/qiskit-tutorials.git /computer/qiskit
+RUN git clone https://github.com/Qiskit/qiskit-machine-learning.git /computer/qiskit-ml
 RUN git clone https://github.com/IBM/ibmpairs.git /computer/ibm_pairs
 
 #welcome messages and instructions for the user
@@ -69,11 +47,11 @@ RUN echo "echo -e \"The following components have been installed in this contain
 RUN echo "echo -e \"matplotlib, seaborn, plotly, pydot, rasterio, imageio, opencv-python, SQLAlchemy, pandas, h5py\"\n" >>~/.bashrc
 RUN echo "echo -e \"scikit-learn, xgboost, lightgbm, scipy, numpy, torch, torchvision, torchaudio, Keras\"\n" >>~/.bashrc
 RUN echo "echo -e \"snapml, tensorflow, tensorboard, ipywidgets, iprogress, elyra, sympy, lale\"\n" >>~/.bashrc
-RUN echo "echo -e \"qiskit, pyscf, ibmpairs\"\n" >>~/.bashrc
+RUN echo "echo -e \"qiskit, pyscf, qiskit-machine-learning, ibmpairs\"\n" >>~/.bashrc
 
 RUN echo "echo -e \"\nStarting Jupyter Lab...\"\n" >>~/.bashrc
 RUN echo "jupyter lab --allow-root --no-browser --ip=0.0.0.0  &>/dev/null &" >>~/.bashrc
-RUN echo "sleep 3" >>~/.bashrc
+RUN echo "sleep 4" >>~/.bashrc
 RUN echo "echo -e \"\n📺 You can open Jupyter Lab using the next URL:\n\"" >>~/.bashrc
 RUN echo "jupyter server list | egrep -o 'http://[^ ]+'" >>~/.bashrc
 
