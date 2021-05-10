@@ -30,9 +30,11 @@ Run the `docker run` command for the desired container
 ## build your own
 
 1. Build the base container
->git clone https://github.com/plwodi/research-platform-docker
->cd research-platform-docker/base-docker
->docker build -t base-docker .
+```
+git clone https://github.com/plwodi/research-platform-docker
+cd research-platform-docker/base-docker
+docker build -t base-docker .
+```
 
 2. Build the complete container
 >cd research-platform-docker/research-docker
