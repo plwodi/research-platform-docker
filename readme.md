@@ -65,12 +65,12 @@ docker run -v ${PWD}:/computer/your_computer -p 8888:8888 -ti NAME
 
 ## run jupyter lab
 
-You can play with JupyterLab in your browser.
+You can access JupyterLab from your browser using the following command.
 ```
 http://0.0.0.0:8888/?token=[[[paste here the token from the terminal]]]
 ```
 
-Sometimes when starting the container the Jupyter Lab URL will not appear.  Manually running the `jupyter server` command will get you the URL needed to access JupyterLab
+Note, sometimes when starting the container the `jupyter server list` results will not appear.  Manually running the `jupyter server list` command will get you the URL needed to access JupyterLab
 ```
 jupyter server list
 ```
