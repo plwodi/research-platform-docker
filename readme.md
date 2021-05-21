@@ -6,7 +6,7 @@ Execute a docker container with some of the common data science, AI/ML, and quan
 
 ## pre-requisites
 
-You need to have installed Docker on your machine, ex. ([Docker Desktop](https://www.docker.com/products/docker-desktop))
+Docker Desktop needs to be installed on your computer for more information refer to the [Docker Desktop](https://www.docker.com/products/docker-desktop) website.
 
 ## use
 
