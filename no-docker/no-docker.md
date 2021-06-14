@@ -11,27 +11,27 @@ sudo apt-get install python3-pip python3-dev
 
 ## Create a Python Virtual Environment to run Jupyter
 
-### Upgrade pip and install virtualenv
+#### Upgrade pip and install virtualenv
 
 ```
 sudo -H pip3 install --upgrade pip
 sudo -H pip3 install virtualenv
 ```
 
-### Create your project directory
+#### Create your project directory
 
 ```
 mkdir ~/project_directory
 cd ~/project_directory
 ```
 
-### Create the Virtual Environment
+#### Create the Virtual Environment
 
 ```
 virtualenv project_env
 ```
 
-### Activate the Virtual Environment
+#### Activate the Virtual Environment
 
 ```
 source project_env/bin/activate
