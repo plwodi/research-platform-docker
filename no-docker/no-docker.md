@@ -9,6 +9,7 @@ sudo apt-get update
 sudo apt-get install python3-pip python3-dev
 ```
 
+
 ## Create a Python Virtual Environment to run Jupyter
 
 #### Upgrade pip and install virtualenv
@@ -45,34 +46,34 @@ pip install jupyter
 
 ## Install the packages
 
-### Install data visualisation components
+#### Install data visualisation components
 
 ```
 RUN pip install matplotlib seaborn plotly==4.14.3 pydot rasterio
 ```
 
-### Install data manipulation components
+#### Install data manipulation components
 ```
 RUN pip install imageio opencv-python SQLAlchemy pandas h5py
 ```
 
-### Install machine learning components
+#### Install machine learning components
 ```
 RUN pip install scikit-learn xgboost lightgbm scipy numpy torch torchvision torchaudio Keras snapml tensorflow tensorboard ipywidgets iprogress
 RUN pip3 install elyra --use-deprecated=legacy-resolver
 ```
 
-### Install additional data science components
+#### Install additional data science components
 ```
 RUN pip install sympy lale
 ```
 
-### Install base Qiskit components
+#### Install base Qiskit components
 ```
 RUN pip3 install qiskit pyscf qiskit-machine-learning
 ```
 
-### Install base IBM PAIRS component(s)
+#### Install base IBM PAIRS component(s)
 ```
 RUN pip install ibmpairs
 ```
