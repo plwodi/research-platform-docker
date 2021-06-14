@@ -44,7 +44,7 @@ source project_env/bin/activate
 pip install jupyter
 ```
 
-## Install the packages
+<!-- ## Install the packages
 
 #### Install data visualisation components
 
@@ -76,7 +76,7 @@ RUN pip3 install qiskit pyscf qiskit-machine-learning
 #### Install base IBM PAIRS component(s)
 ```
 RUN pip install ibmpairs
-```
+``` -->
 
 ## Run and access Jupyter
 
